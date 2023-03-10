@@ -73,7 +73,8 @@ class MainTab(QtWidgets.QWidget):
         self.open_finished_w.setChecked(True)
 
         self.save_btn = QtWidgets.QPushButton('Создать')
-
+        
+        Path("user fonts").mkdir(exist_ok=True)
         self.fonts_w = QtWidgets.QListWidget()
         self.fonts_w.addItems(
             map(lambda x: x.stem, Path('base fonts').iterdir()))
